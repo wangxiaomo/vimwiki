@@ -381,18 +381,6 @@ endif
 nnoremap <silent><script><buffer>
       \ <Plug>VimwikiGoBackLink :VimwikiGoBackLink<CR>
 
-if !hasmapto('<Plug>VimwikiNextLink')
-  nmap <silent><buffer> <TAB> <Plug>VimwikiNextLink
-endif
-nnoremap <silent><script><buffer>
-      \ <Plug>VimwikiNextLink :VimwikiNextLink<CR>
-
-if !hasmapto('<Plug>VimwikiPrevLink')
-  nmap <silent><buffer> <S-TAB> <Plug>VimwikiPrevLink
-endif
-nnoremap <silent><script><buffer>
-      \ <Plug>VimwikiPrevLink :VimwikiPrevLink<CR>
-
 if !hasmapto('<Plug>VimwikiDeleteLink')
   nmap <silent><buffer> <Leader>wd <Plug>VimwikiDeleteLink
 endif
@@ -457,12 +445,6 @@ elseif VimwikiGet('syntax') == 'media'
   nnoremap <buffer> gl3 :VimwikiListChangeLevel #<CR>
 endif
 
-
-" Table mappings
-if g:vimwiki_table_mappings
-  inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()
-  inoremap <expr> <buffer> <S-Tab> vimwiki#tbl#kbd_shift_tab()
-endif
 
 nnoremap <buffer> gqq :VimwikiTableAlignQ<CR>
 nnoremap <buffer> gww :VimwikiTableAlignW<CR>
